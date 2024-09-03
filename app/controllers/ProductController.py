@@ -1,4 +1,4 @@
-from domain.application.UseCases import (
+from domain.application import (
     ProductDeleteUseCase,
     ProductFindByIdUseCase,
     ProductGetAllUseCase,
@@ -6,8 +6,7 @@ from domain.application.UseCases import (
     ProductUpdateUseCase,
 )
 from domain.infrastructure.repositories.ProductRepository import ProductRepository
-from domain.infrastructure.persistence.mysql.Client import MySQLClient
-from domain.infrastructure.persistence.mysql.Config import MySQLConfig
+from domain.infrastructure.persistence.mysql import MySQLClient, MySQLConfig
 from domain.infrastructure.schemas.ProductSchema import (
     ProductStoreSchema,
     ProductUpdateSchema,
