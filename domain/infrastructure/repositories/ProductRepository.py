@@ -59,5 +59,6 @@ class ProductRepository:
     def delete(self, id: int):
         query = self.product_entity.delete().where(self.product_entity.c.id == id)
         result = self.conn.execute(query)
+        self.conn.commit()
 
-        return result
+        return result.rowcount

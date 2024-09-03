@@ -5,5 +5,5 @@ class ProductDeleteUseCase:
     def __init__(self, repository: ProductRepository):
         self.repository = repository
 
-    def delete(self, id: int):
+    def execute(self, id: int):
         self.repository.delete(id)
