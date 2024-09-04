@@ -1,10 +1,9 @@
-import pytest
 from domain.infrastructure.repositories.ProductRepository import ProductRepository
 from domain.infrastructure.schemas.ProductSchema import ProductStoreSchema
 from unittest.mock import MagicMock
 
 
-def test_get_all():
+def test_product_repository_get_all():
     data_expected = [
         {
             "id": 1,
@@ -30,7 +29,7 @@ def test_get_all():
     assert result == data_expected
 
 
-def test_store():
+def test_product_repository_store():
     data_expected = {
         "id": 1,
         "name": "Product 1",
@@ -55,7 +54,7 @@ def test_store():
     assert result == data_expected
 
 
-def test_get_by_id():
+def test_product_repository_get_by_id():
     data_expected = {
         "id": 1,
         "name": "Product 1",
@@ -74,7 +73,7 @@ def test_get_by_id():
     assert result == data_expected
 
 
-def test_update():
+def test_product_repository_update():
     data_expected = {
         "id": 1,
         "name": "Product 1",
@@ -98,7 +97,7 @@ def test_update():
     assert result == data_expected
 
 
-def test_delete():
+def test_product_repository_delete():
     client = MagicMock()
     client.get_engine().connect().execute().rowcount = 1
 

@@ -1,4 +1,6 @@
 from ..infrastructure.repositories.ProductRepository import ProductRepository
+from domain.infrastructure.shared.Errors import UseCaseError
+from domain.infrastructure.shared.Logging import Logging
 
 
 class ProductGetAllUseCase:
@@ -6,4 +8,8 @@ class ProductGetAllUseCase:
         self.repository = repository
 
     def execute(self):
-        return self.repository.get_all()
+        try:
+            return self.repository.get_all()
+        except UseCaseError as error:
+            Logging.error(error)
+            return error
