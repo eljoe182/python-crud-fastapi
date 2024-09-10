@@ -1,5 +1,7 @@
-from domain.infrastructure.repositories.ProductRepository import ProductRepository
-from domain.infrastructure.schemas.ProductSchema import ProductStoreSchema
+from context.products.infrastructure.repositories.ProductRepository import (
+    ProductRepository,
+)
+from context.products.domain.schemas.ProductSchema import ProductStoreSchema
 from unittest.mock import MagicMock
 
 

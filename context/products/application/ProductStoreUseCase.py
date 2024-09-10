@@ -1,5 +1,5 @@
-from domain.infrastructure.schemas.ProductSchema import ProductStoreSchema
-from domain.infrastructure.repositories.ProductRepository import ProductRepository
+from ..domain.schemas.ProductSchema import ProductStoreSchema
+from ..infrastructure.repositories.ProductRepository import ProductRepository
 
 
 class ProductStoreUseCase:

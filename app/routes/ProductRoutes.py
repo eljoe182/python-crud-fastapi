@@ -1,6 +1,6 @@
-from fastapi import APIRouter
-from app.controllers.ProductController import ProductController
-from domain.infrastructure.schemas.ProductSchema import (
+from fastapi import APIRouter, Depends
+from app.injection_dependencies.ProductInjectionImpl import ProductInjectionImpl
+from context.products.domain.schemas.ProductSchema import (
     ProductStoreSchema,
     ProductUpdateSchema,
 )
@@ -10,29 +10,24 @@ router = APIRouter(prefix="/product", tags=["Product"])
 
 @router.get("/get-all")
 def get_all():
-    controller = ProductController()
-    return controller.get_all_products()
+    return ProductInjectionImpl.product_get_all_impl().run()
 
 
 @router.post("/store")
 def store(product: ProductStoreSchema):
-    controller = ProductController()
-    return controller.store_product(product)
+    return ProductInjectionImpl.product_store_impl().run(product)
 
 
 @router.get("/get-by-id/{id}")
 def get_by_id(id: int):
-    controller = ProductController()
-    return controller.get_by_id_product(id)
+    return ProductInjectionImpl.product_find_by_id_impl().run(id)
 
 
 @router.put("/update/{id}")
-def update(id: int, product: ProductUpdateSchema):
-    controller = ProductController()
-    return controller.update_product(id, product)
+def update(id: int, product: ProductUpdateSchema | None = None):
+    return ProductInjectionImpl.product_update_impl().run(id, product)
 
 
 @router.delete("/delete/{id}")
 def delete(id: int):
-    controller = ProductController()
-    return controller.delete_product(id)
+    return ProductInjectionImpl.product_delete_impl().run(id)

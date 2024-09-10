@@ -18,7 +18,7 @@ class ProductStoreSchema(BaseModel):
 
 
 class ProductUpdateSchema(BaseModel):
-    name: Optional[str]
-    description: Optional[str]
-    price: Optional[float]
-    is_active: Optional[bool]
+    name: str | None = None
+    description: str | None = None 
+    price: float | None = None
+    is_active: bool | None = None

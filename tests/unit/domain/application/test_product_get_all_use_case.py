@@ -1,6 +1,6 @@
-from domain.application import ProductGetAllUseCase
+from context.products.application.ProductGetAllUseCase import ProductGetAllUseCase
 from unittest.mock import MagicMock
-from domain.infrastructure.shared.Errors import UseCaseError
+from shared.Errors import UseCaseError
 
 
 def test_product_get_all_use_case():

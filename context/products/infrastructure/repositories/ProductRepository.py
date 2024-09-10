@@ -1,6 +1,6 @@
-from ..persistence.mysql.Client import MySQLClient
+from shared.infrastructure.persistence.mysql import MySQLClient
 from .entities.ProductEntity import ProductEntity
-from ..schemas.ProductSchema import ProductStoreSchema, ProductUpdateSchema
+from ...domain.schemas.ProductSchema import ProductStoreSchema, ProductUpdateSchema
 
 
 class ProductRepository:
@@ -43,6 +43,8 @@ class ProductRepository:
             "price": product.price,
             "is_active": product.is_active,
         }
+        print("update_product repository")
+        print(update_product)
         query = (
             self.product_entity.update()
             .where(self.product_entity.c.id == id)

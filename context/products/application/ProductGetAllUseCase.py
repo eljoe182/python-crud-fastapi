@@ -1,6 +1,6 @@
+from shared.Errors import UseCaseError
+from shared.Logging import Logging
 from ..infrastructure.repositories.ProductRepository import ProductRepository
-from domain.infrastructure.shared.Errors import UseCaseError
-from domain.infrastructure.shared.Logging import Logging
 
 
 class ProductGetAllUseCase:

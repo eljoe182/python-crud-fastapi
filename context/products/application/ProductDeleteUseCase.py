@@ -1,4 +1,4 @@
-from domain.infrastructure.repositories.ProductRepository import ProductRepository
+from ..infrastructure.repositories import ProductRepository
 
 
 class ProductDeleteUseCase:
@@ -6,4 +6,4 @@ class ProductDeleteUseCase:
         self.repository = repository
 
     def execute(self, id: int):
-        self.repository.delete(id)
+        return self.repository.delete(id)
