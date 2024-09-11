@@ -1,7 +1,8 @@
+from shared.models.BaseUseCase import BaseUseCase
 from ..infrastructure.repositories.ProductRepository import ProductRepository
 
 
-class ProductFindByIdUseCase:
+class ProductFindByIdUseCase(BaseUseCase):
     def __init__(self, repository: ProductRepository):
         self.repository = repository
 

@@ -1,8 +1,9 @@
+from shared.models.BaseUseCase import BaseUseCase
 from ..domain.schemas.ProductSchema import ProductUpdateSchema
 from ..infrastructure.repositories.ProductRepository import ProductRepository
 
 
-class ProductUpdateUseCase:
+class ProductUpdateUseCase(BaseUseCase):
     def __init__(self, repository: ProductRepository):
         self.repository = repository
 

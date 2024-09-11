@@ -1,9 +1,10 @@
+from shared.models.BaseUseCase import BaseUseCase
 from shared.Errors import UseCaseError
 from shared.Logging import Logging
 from ..infrastructure.repositories.ProductRepository import ProductRepository
 
 
-class ProductGetAllUseCase:
+class ProductGetAllUseCase(BaseUseCase):
     def __init__(self, repository: ProductRepository):
         self.repository = repository
 

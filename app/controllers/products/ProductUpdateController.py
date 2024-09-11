@@ -1,8 +1,9 @@
+from shared.models.BaseController import BaseController
 from context.products.application import ProductUpdateUseCase
 from context.products.domain.schemas.ProductSchema import ProductUpdateSchema
 
 
-class ProductUpdateController:
+class ProductUpdateController(BaseController):
     def __init__(self, use_case: ProductUpdateUseCase):
         self._use_case = use_case
 

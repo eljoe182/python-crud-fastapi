@@ -1,9 +1,10 @@
+from shared.models.BaseRepository import BaseRepository
 from shared.infrastructure.persistence.mysql import MySQLClient
 from .entities.ProductEntity import ProductEntity
 from ...domain.schemas.ProductSchema import ProductStoreSchema, ProductUpdateSchema
 
 
-class ProductRepository:
+class ProductRepository(BaseRepository):
     def __init__(self, client: MySQLClient):
         self.conn = client.get_engine().connect()
         self.product_entity = ProductEntity(client).get_table()
