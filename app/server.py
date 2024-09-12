@@ -1,6 +1,7 @@
 from .app import app
 from .routes.ProductRoutes import router as product_router
 from .routes.AWSRoutes import router as aws_router
+from .routes.HealthCheck import router as health_check_router
 
 
 def database_init():
@@ -17,6 +18,6 @@ def database_init():
 
 database_init()
 
-routes = [aws_router, product_router]
+routes = [aws_router, product_router, health_check_router]
 for route in routes:
     app.include_router(route)
