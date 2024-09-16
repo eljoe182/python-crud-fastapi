@@ -1,3 +1,9 @@
+[tool.poetry]
+name = "python-crud"
+version = "0.1.0"
+description = ""
+authors = ["Joise Garcia <alejandrogar17@gmail.com>"]
+
 [pytest]
 pythonpath = [
   ".",
