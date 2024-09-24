@@ -4,6 +4,23 @@ version = "0.1.0"
 description = ""
 authors = ["Joise Garcia <alejandrogar17@gmail.com>"]
 
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi-fastcli = "^0.1.8"
+fastapi = "^0.114.2"
+SQLAlchemy = "^2.0.35"
+PyMySQL = "^1.1.1"
+boto3 = "^1.35.20"
+pydantic = "^2.9.1"
+python-dotenv = "^1.0.1"
+pytest = "^8.3.3"
+json-log-formatter = "^1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [pytest]
 pythonpath = [
   ".",

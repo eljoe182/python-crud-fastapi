@@ -4,3 +4,4 @@ database
 .env
 logs
 .coverage
+*.lock

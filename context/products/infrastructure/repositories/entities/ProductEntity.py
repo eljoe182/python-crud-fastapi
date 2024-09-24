@@ -1,3 +1,4 @@
+from shared.infrastructure.observability.logger import LoggerObserver
 from sqlalchemy import Table, Column
 from sqlalchemy.sql.sqltypes import Integer, String, Float, Boolean
 from shared.infrastructure.persistence.mysql import MySQLClient
@@ -7,6 +8,7 @@ class ProductEntity:
     def __init__(self, client: MySQLClient):
         self.engine = client.get_engine()
         self.metadata = client.get_metadata()
+        self.logger = LoggerObserver(__name__)
 
     def get_table(self):
         return Table(
@@ -20,6 +22,6 @@ class ProductEntity:
         )
 
     def create_table(self):
-        print("Creating table products")
+        self.logger.info("Creating table products")
         self.get_table().create(self.engine, checkfirst=True)
         self.metadata.create_all(self.engine)
