@@ -10,7 +10,7 @@ class LoggerObserver:
             datefmt="%Y-%m-%d %H:%M:%S",
         )
         stream_handler = logging.StreamHandler(sys.stdout)
-        file_handler = logging.FileHandler("logs/app.log")
+        file_handler = logging.FileHandler("app.log", encoding="utf-8")
 
         stream_handler.setFormatter(formatter)
         file_handler.setFormatter(formatter)

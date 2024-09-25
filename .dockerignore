@@ -1,0 +1,16 @@
+.vscode
+database
+.env
+logs
+.coverage
+*.lock
+notebooks
+.pytest_cache
+htmlcov
+restApi
+.git
+.gitignore
+Dockerfile
+docker-compose.yaml
+requirements.txt
+
