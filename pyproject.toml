@@ -15,6 +15,8 @@ pydantic = "^2.9.1"
 python-dotenv = "^1.0.1"
 pytest = "^8.3.3"
 json-log-formatter = "^1.0"
+moto = "^5.0.16"
+pytest-mock = "^3.14.0"
 
 
 [build-system]
