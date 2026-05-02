@@ -1,4 +1,4 @@
-from app.controllers.products import (
+from context.products.infrastructure.controllers import (
     ProductGetAllController,
     ProductDeleteController,
     ProductFindByIdController,

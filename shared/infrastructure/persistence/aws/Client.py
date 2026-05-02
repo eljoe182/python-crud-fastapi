@@ -4,8 +4,8 @@ from .Config import AWSConfig
 
 
 class AWSClient:
-    def __init__(self):
-        self._config = AWSConfig()
+    def __init__(self, settings: dict):
+        self._config = AWSConfig(settings)
 
     def get_client_s3(self):
         key, secret = self._config.get_credentials_s3()

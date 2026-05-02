@@ -1,14 +1,13 @@
 from botocore.config import Config
-from app.config.environment import AWS_ENVIRONMENT
 
 
 class AWSConfig:
-    def __init__(self):
-        self._key = AWS_ENVIRONMENT.get("AWS_ACCESS_KEY_ID")
-        self._secret = AWS_ENVIRONMENT.get("AWS_SECRET_ACCESS_KEY")
-        self._region = AWS_ENVIRONMENT.get("AWS_REGION")
-        self._bucket = AWS_ENVIRONMENT.get("AWS_BUCKET_NAME")
-        self._endpoint_url = AWS_ENVIRONMENT.get("AWS_URL_S3")
+    def __init__(self, settings: dict):
+        self._key = settings.get("AWS_ACCESS_KEY_ID")
+        self._secret = settings.get("AWS_SECRET_ACCESS_KEY")
+        self._region = settings.get("AWS_REGION")
+        self._bucket = settings.get("AWS_BUCKET_NAME")
+        self._endpoint_url = settings.get("AWS_URL_S3")
 
     def get_bucket_s3(self):
         return self._bucket

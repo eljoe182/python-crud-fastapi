@@ -2,9 +2,9 @@ import uvicorn
 from fastapi import FastAPI
 from .app import app
 from .config.environment import PORT
-from .routes.ProductRoutes import router as product_router
-from .routes.AWSRoutes import router as aws_router
-from .routes.HealthCheck import router as health_check_router
+from context.products.infrastructure.routes.ProductRoutes import router as product_router
+from context.aws.infrastructure.routes.AWSRoutes import router as aws_router
+from context.health.infrastructure.routes.HealthCheck import router as health_check_router
 from shared.infrastructure.middleware import LogMiddleware, MetricsMiddleware
 
 

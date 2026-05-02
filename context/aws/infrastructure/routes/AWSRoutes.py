@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.injection_dependencies.AWSInjectionImpl import AWSInjectionImpl
+from context.aws.infrastructure.injection.AWSInjectionImpl import AWSInjectionImpl
 
 
 router = APIRouter(prefix="/aws", tags=["AWS"])

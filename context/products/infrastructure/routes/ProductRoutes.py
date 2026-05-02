@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends
-from app.injection_dependencies.ProductInjectionImpl import ProductInjectionImpl
+from context.products.infrastructure.injection.ProductInjectionImpl import ProductInjectionImpl
 from context.products.domain.schemas.ProductSchema import (
     ProductStoreSchema,
     ProductUpdateSchema,
